@@ -1,9 +1,8 @@
 package com.maarten.FoodTracker.controller;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.maarten.FoodTracker.model.User;
@@ -20,10 +19,17 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/userstats")
-    public int[] food() {
-        List<User> list = userService.getAllUsers();
+    @GetMapping("/getuser")
+    public User getuser(@RequestParam Long userID) {
 
-        return new int[] {list.get(0).getCaloriesGoal(), list.get(0).getProteinGoal(), list.get(0).getCarbGoal(), list.get(0).getFatGoal()};
+
+        return userService.getUserById(userID);
+    }
+
+    @GetMapping("/userstats")
+    public int[] getfoodgoals(@RequestParam Long userID) {
+        User user = userService.getUserById(userID);
+
+        return new int[] {user.getCaloriesGoal(), user.getProteinGoal(), user.getCarbGoal(), user.getFatGoal()};
     }
 }

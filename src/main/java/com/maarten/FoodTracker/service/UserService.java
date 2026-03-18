@@ -1,7 +1,5 @@
 package com.maarten.FoodTracker.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.maarten.FoodTracker.model.User;
@@ -16,7 +14,10 @@ public class UserService {
         this.UserRepo = userRepository;
     }
 
-    public List<User> getAllUsers() {
-        return UserRepo.findAll();
+    public User getUserById(Long userID) {
+
+        User user = UserRepo.findById(userID).orElseThrow(() -> new RuntimeException("User not found"));
+
+        return user;
     }
 }
