@@ -19,19 +19,19 @@ public class Food {
     @Column(length = 50)
     private String barcode;
 
-    @Column(name = "serving_size", nullable = false, precision = 5, scale = 1)
+    @Column(name = "serving_size", nullable = false)
     private double servingSize;
 
-    @Column(name = "calories_per_100g", nullable = false, precision = 5, scale = 1)
+    @Column(name = "calories_per_100g", nullable = false)
     private double caloriesPer100g;
 
-    @Column(name = "fat_per_100g", nullable = false, precision = 5, scale = 1)
+    @Column(name = "fat_per_100g", nullable = false)
     private double fatPer100g;
 
-    @Column(name = "carbs_per_100g", nullable = false, precision = 5, scale = 1)
+    @Column(name = "carbs_per_100g", nullable = false)
     private double carbsPer100g;
 
-    @Column(name = "protein_per_100g", nullable = false, precision = 5, scale = 1)
+    @Column(name = "protein_per_100g", nullable = false)
     private double proteinPer100g;
 
     // Constructors
