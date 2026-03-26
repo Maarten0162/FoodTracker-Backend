@@ -13,8 +13,8 @@
  </parent>
 
  <groupId>com.maarten</groupId>
- <artifactId>FoodTracker</artifactId>
- <version>0.0.1-SNAPSHOT</version>
+  <artifactId>FoodTracker-Backend</artifactId>
+  <version>1.0.0</version>
  <name>FoodTrackerBackend</name>
  <description>Food Tracker Backend</description>
 
@@ -92,8 +92,7 @@
 
    <plugin>
     <groupId>org.springframework.boot</groupId>
-    <artifactId>FoodTracker-Backend</artifactId>
-    <version>0.0.1</version>
+    <artifactId>spring-boot-maven-plugin</artifactId>
    </plugin>
 
   </plugins>
