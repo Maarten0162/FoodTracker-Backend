@@ -31,7 +31,7 @@ public class FoodController {
         return foodService.getAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{foodID}")
     public Food getById(@PathVariable Long foodID) {
         return foodService.getFoodById(foodID);
     }
