@@ -5,8 +5,12 @@ FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 
 # Copy Maven wrapper and pom.xml first to leverage Docker caching
+# Copy Maven wrapper and pom.xml first
 COPY mvnw pom.xml ./
 COPY .mvn .mvn
+
+# Make mvnw executable
+RUN chmod +x mvnw
 
 # Pre-download dependencies to cache them
 RUN ./mvnw dependency:go-offline -B
